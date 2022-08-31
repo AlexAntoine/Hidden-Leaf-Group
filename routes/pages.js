@@ -12,4 +12,10 @@ router.get('/contact',(req, res)=>{
     res.sendFile(path.join(__dirname, '../contact.html'));
 });
 
+router.get('/about',(req, res)=>{
+
+    res.sendFile(path.join(__dirname, '../about.html'));
+});
+
+
 module.exports = router;
