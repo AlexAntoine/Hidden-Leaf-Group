@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express')
 const router = new express.Router();
+const sendEmail = require('../email/sendEmail.js');
 
 router.get('/',(req, res)=>{
 
@@ -18,7 +19,13 @@ router.get('/about',(req, res)=>{
 });
 
 router.post('/email',(req, res)=>{
-    console.log('Route hit');
+    const {message, email, subject} = req.body;
+    // console.log(req.body)
+
+    sendEmail(email, subject, message)
+    
+
+    res.redirect('/');
 })
 
 
