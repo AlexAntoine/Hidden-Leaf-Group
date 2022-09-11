@@ -17,5 +17,9 @@ router.get('/about',(req, res)=>{
     res.sendFile(path.join(__dirname, '../about.html'));
 });
 
+router.post('/email',(req, res)=>{
+    console.log('Route hit');
+})
+
 
 module.exports = router;
