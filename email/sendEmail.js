@@ -1,6 +1,7 @@
+require('dotenv').config({path:'./config/.env'})
 const sgMail = require('@sendgrid/mail');
 
-sgMail.setApiKey(HLG_KEY);
+sgMail.setApiKey(process.env.HLG_KEY);
 
 const sendEmail = async(email, subject, message)=>{
 
